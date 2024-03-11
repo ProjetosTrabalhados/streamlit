@@ -3,10 +3,8 @@ import pandas as pd
 from streamlit_option_menu import option_menu
 #tester
 #tester2
-
-
-
 # __error = {}
+
 
 def sideBar():
       with st.sidebar:
@@ -59,18 +57,14 @@ def main():
     # df_2_new = dict()
 
     
-
-
     st.write("***")
     st.title("Comparação entre tabelas")
+
     #Trazendo dados defirentes/iguais(true/false)  nos dois index com base no df_1
-
-
-    st.write(df_1[(df_1 > df_2).all(axis=1) == False])
-    
+    st.area_chart(df_1[(df_1 > df_2).all(axis=1)])
+    st.area_chart(df_2[(df_1 > df_2).all(axis=1)])
     # sideBar()
     # selected=""
-  
 
 if __name__ == "__main__":
     main()
