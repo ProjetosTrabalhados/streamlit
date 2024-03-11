@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+# import pandas as pd
+
 
 class Graficos:
     # ./csv_arquivos/Energy-/
@@ -31,7 +33,9 @@ class Graficos:
                 
                 match tipo.lower():
                     case "barras":
+                        st.title(name_arq)
                         st.bar_chart(data[name_arq])
+                        st.write("***")
                     case _:
                         st.warning("Não foi possivel reconhecer o tipo de gráfico pedido")
             
@@ -39,3 +43,8 @@ class Graficos:
                 st.error(e)
                 st.warning("Segue tabela para visualização do arquivo "+self.__csv[name_arq])
                 st.write(data[name_arq])
+
+  
+        
+
+    
