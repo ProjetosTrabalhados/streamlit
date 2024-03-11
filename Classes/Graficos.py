@@ -5,7 +5,7 @@ class Graficos:
     # ./csv_arquivos/Energy-/
     # __dir_arq = str()
 
-    def __init__(self, csv, dir_arq="./csv_arquivos/Energy-/"):
+    def __init__(self, csv, dir_arq="./arquivos/Energy-/"):
         self.__dir_arq = dir_arq
         self.__csv = csv
     
