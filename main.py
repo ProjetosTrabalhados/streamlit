@@ -7,8 +7,7 @@ from streamlit_option_menu import option_menu
 
 
 # __error = {}
-# st.markdown("# Main page 🎈")
-# st.sidebar.markdown("# Main page 🎈")
+
 def sideBar():
       with st.sidebar:
         selected = option_menu("Main Menu", ["Home", 'Graphs'], 
@@ -25,7 +24,10 @@ def sideBar():
 
 def main():
     st.title("Main")
-    sideBar()
+    st.markdown("# Main page 🎈")
+    st.sidebar.markdown("# Main page 🎈")
+
+    # sideBar()
     # selected=""
   
 

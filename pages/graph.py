@@ -2,22 +2,9 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from Classes.Graficos import Graficos
 
-def sideBar():
-      with st.sidebar:
-        selected = option_menu("Main Menu", ["Home", 'Graphs'], 
-            icons=['house', 'graphs'], menu_icon="cast", default_index=1)
-        
-        match selected:
-            case 'Graphs':
-                # st.write(selected)
-                # st.page("pages/graph.py")
-                st.switch_page("pages/graph.py")
-            case _:
-                # st.switch_page("pages/menu.py")
-                pass
 
-# st.markdown("# Graph bar  🎈")
-# st.sidebar.markdown("# Graph bar page 🎈")
+st.markdown("# Graph bar  🎈")
+st.sidebar.markdown("# Graph bar page 🎈")
 
 # sideBar()    
 csv = {
@@ -33,7 +20,7 @@ csv = {
 #     break
 # st.write("---")
 
-st.title("Plotting graphs")
+# st.title("Plotting graphs")
 st.write("---")
 
 graph = Graficos(csv)    
