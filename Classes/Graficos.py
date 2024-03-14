@@ -36,6 +36,11 @@ class Graficos:
                         st.title(name_arq)
                         st.bar_chart(data[name_arq])
                         st.write("***")
+                    case "lines":
+                        st.title(name_arq)
+                        st.line_chart(data[name_arq])
+                        st.write("***")
+
                     case _:
                         st.warning("Não foi possivel reconhecer o tipo de gráfico pedido")
             

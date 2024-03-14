@@ -8,14 +8,19 @@ from streamlit_option_menu import option_menu
 
 def sideBar():
       with st.sidebar:
-        selected = option_menu("Main Menu", ["Home", 'Graphs'], 
-            icons=['house', 'graphs'], menu_icon="cast", default_index=0)
+        selected = option_menu("Main Menu", ["Home", 'Barras', 'Linhas'], 
+            icons=['house', 'bars', 'lines'], menu_icon="cast", default_index=0)
         
         match selected:
-            case 'Graphs':
+            case 'Bars':
                 # st.write(selected)
                 # st.page("pages/graph.py")
-                st.switch_page("pages/graph.py")
+                st.switch_page("pages/bar.py")
+            case 'Lines':
+                # st.write(selected)
+                # st.page("pages/graph.py")
+                st.switch_page("pages/lines.py")
+
             case _:
                 # st.switch_page("main.py")
                 pass
@@ -60,13 +65,10 @@ def main():
     st.write("***")
     st.title("Comparação entre tabelas")
 
-    #Trazendo dados defirentes/iguais(true/false)  nos dois index com base no df_1
-    st.area_chart(df_1[(df_1 > df_2).all(axis=1)])
-    st.area_chart(df_2[(df_1 > df_2).all(axis=1)])
+    st.line_chart(df_1[(df_1 > df_2).all(axis=1)])
+    st.line_chart(df_2[(df_1 > df_2).all(axis=1)])
     # sideBar()
     # selected=""
-
+    
 if __name__ == "__main__":
     main()
-
-
